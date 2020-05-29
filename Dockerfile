@@ -1,7 +1,7 @@
 
-ARG snap_arch="arm64"
+ARG snap_arch="amd64"
 
-FROM arm64v8/ros:melodic-ros-base-bionic as builder
+FROM ros:melodic-ros-base-bionic as builder
 
 ARG snap_arch
 RUN apt-get update --yes
@@ -30,7 +30,7 @@ RUN set -x \
     && chmod +x /snap/bin/snapcraft
 
 
-FROM arm64v8/ros:melodic-ros-base-bionic
+FROM ros:melodic-ros-base-bionic
 
 ARG snap_arch
 
